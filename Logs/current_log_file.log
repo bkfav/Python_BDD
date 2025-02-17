@@ -1,0 +1,12 @@
+06/02/2025 04:57:52 PM: INFO: SeleniumHelper: open_page: Successfully navigated to page http://automationexercise.com:
+06/02/2025 04:57:52 PM: INFO: SeleniumHelper: visible: Label is visible in {'xpath': '//*[@id="header"]/div/div/div/div[2]/div/ul/li[1]/a'}:
+06/02/2025 04:57:52 PM: INFO: SeleniumHelper: wait_till_element_is_present: Waiting 10 seconds for element //*[@id="header"]/div/div/div/div[2]/div/ul/li[4]/a presence:
+06/02/2025 04:57:52 PM: INFO: SeleniumHelper: wait_till_element_is_present: Element is found:
+06/02/2025 04:57:53 PM: INFO: SeleniumHelper: click: {'xpath': '//*[@id="header"]/div/div/div/div[2]/div/ul/li[4]/a'} element is clicked:
+06/02/2025 04:57:53 PM: INFO: SeleniumHelper: verify_Label: New User Signup! is available in {'xpath': '//*[@id="form"]/div/div/div[3]/div/h2'}:
+06/02/2025 04:57:53 PM: INFO: SeleniumHelper: fill_value: Tony Jaa value is filled in {'xpath': '//*[@id="form"]/div/div/div[3]/div/form/input[2]'}:
+06/02/2025 04:57:53 PM: INFO: SeleniumHelper: fill_value: tony.jaa@gmail.com value is filled in {'xpath': '//*[@id="form"]/div/div/div[3]/div/form/input[3]'}:
+06/02/2025 04:57:54 PM: INFO: SeleniumHelper: click: {'xpath': '//*[@id="form"]/div/div/div[3]/div/form/button'} element is clicked:
+06/02/2025 04:57:54 PM: INFO: SeleniumHelper: wait_till_element_is_present: Waiting 10 seconds for element //*[@id="form"]/div/div/div/div/h2/b presence:
+06/02/2025 04:57:54 PM: INFO: SeleniumHelper: wait_till_element_is_present: Element is found:
+06/02/2025 04:57:54 PM: INFO: SeleniumHelper: verify_Label: ENTER ACCOUNT INFORMATION is available in {'xpath': '//*[@id="form"]/div/div/div/div/h2/b'}:

@@ -1,0 +1,4 @@
+"DESCRIPTION","DURATION IN MS","NAME","PARENT SUITE","START TIME","STATUS","STOP TIME","SUB SUITE","SUITE","TEST CLASS","TEST METHOD"
+"","6891","Navigate to home page","","Thu Feb 06 16:57:45 IST 2025","passed","Thu Feb 06 16:57:52 IST 2025","","","",""
+"","1335","Open sign-up page","","Thu Feb 06 16:57:52 IST 2025","passed","Thu Feb 06 16:57:53 IST 2025","","","",""
+"","896","Make the sign-up -- @1.1 ","","Thu Feb 06 16:57:53 IST 2025","passed","Thu Feb 06 16:57:54 IST 2025","","","",""
