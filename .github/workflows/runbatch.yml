@@ -1,0 +1,11 @@
+name: Run Batch File 
+on: push
+
+# Can have multiple jobs, but this example is just one build job.
+jobs:
+  run-batch:
+    runs-on: windows-latest
+    steps:
+     - name: Build ROM
+       shell: cmd
+       run: run.bat
