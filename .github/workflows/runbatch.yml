@@ -8,4 +8,4 @@ jobs:
     steps:
      - name: Build ROM
        shell: cmd
-       run: run.bat
+       run: /bkfav/Python_BDD/run.bat
