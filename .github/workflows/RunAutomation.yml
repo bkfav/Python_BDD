@@ -13,7 +13,3 @@ jobs:
         with:
           python-version: 3.10.5
       - uses: cryptic-wizard/run-behave-tests@v0.4.0
-      - name: Run behave command
-        run: behave
-      - name: Checkout Repository
-        uses: actions/checkout@v3
