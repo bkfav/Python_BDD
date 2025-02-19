@@ -1,15 +1,17 @@
 name: Run Batch File 
-on: push
+on: 
+  workflow_dispatch:
 
 # Can have multiple jobs, but this example is just one build job.
 jobs:
   run-batch:
-    runs-on: ubuntu-latest
+    runs-on: windows-latest
     steps:
       - name: Checkout Repository
         uses: actions/checkout@v3
+      - name: List directory contents (debugging)
+        run: dir
+        shell: cmd
       - name: Run Automation Tests
         run: run.bat
         shell: cmd
-      - name: Build ROM
-        run: cmd /c run.bat
