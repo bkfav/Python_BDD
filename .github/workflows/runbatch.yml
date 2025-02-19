@@ -6,6 +6,10 @@ jobs:
   run-batch:
     runs-on: windows-latest
     steps:
-     - name: Build ROM
+     - name: List directory contents (debugging)
+       run: dir
        shell: cmd
+       
+     - name: Build ROM
        run: ./run.bat
+       shell: cmd
