@@ -16,7 +16,7 @@ jobs:
       - name: Install pytest Allure plugin
         run: pip install pytest allure-pytest
       - name: Run tests with Allure results
-        run: pytest --alluredir=./allure-results tests/
+        run: pytest --Report=./allure_results/
       - name: List directory contents (debugging)
         run: dir
         shell: cmd
