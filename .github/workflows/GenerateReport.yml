@@ -1,4 +1,4 @@
-name: Run Batch File 
+name: Generate Allure Report 
 on: 
   workflow_dispatch:
 
