@@ -11,5 +11,5 @@ jobs:
        shell: cmd
        
      - name: Build ROM
-       run: ./run.bat
+       run: run.bat
        shell: cmd
