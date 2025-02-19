@@ -1,0 +1,19 @@
+name: Run Batch File 
+on: 
+  workflow_dispatch:
+
+# Can have multiple jobs, but this example is just one build job.
+jobs:
+  run-batch:
+    runs-on: windows-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v3
+      - uses: actions/setup-python@v5
+        with:
+          python-version: 3.10.5
+      - uses: cryptic-wizard/run-behave-tests@v0.4.0
+      - name: Install pytest Allure plugin
+        run: pip install pytest allure-pytest
+      - name: Run tests with Allure results
+        run: pytest --alluredir=./Report/allure_results
