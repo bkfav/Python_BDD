@@ -1,4 +1,4 @@
-name: Run Batch File 
+name: Run Automation 
 on: 
   workflow_dispatch:
 
