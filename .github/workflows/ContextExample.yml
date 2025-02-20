@@ -1,0 +1,28 @@
+name: Context Example 
+on: 
+  workflow_dispatch:
+   inputs:
+     text:
+       description: 'enter your text'
+       default: 'Hello'
+       required: true
+       type: string
+env:
+  firstname: 'bhavesh'
+  website: 'Test Website'
+
+# Can have multiple jobs, but this example is just one build job.
+jobs:
+  context-demo:
+    runs-on: ${{matrix.os}}
+    strategy:
+      matrix:
+        os: [windows-latest]
+    steps:
+     - run: echo ${{input.text}}
+     - run: echo ${{ github.event.input.text }}
+     - run: echo ${{ github.actor }}
+     - run: echo 'Hello ${{env.firstname}}'
+     - run: echo 'Website - ${{env.website}}'
+     - run: echo ${{job.status}}
+     - run: echo ${{runner.os}}
