@@ -26,3 +26,5 @@ jobs:
      - run: echo 'Website - ${{ env.website }}'
      - run: echo ${{ job.status }}
      - run: echo ${{ runner.os }}
+     - run: echo 'Secret ${{ secrets.password }}'
+     - run: echo 'Variable ${{variables.ALLURE_RESULTS_PATH}}'
