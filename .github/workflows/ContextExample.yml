@@ -19,10 +19,10 @@ jobs:
       matrix:
         os: [windows-latest]
     steps:
-     - run: echo ${{inputs.text}}
+     - run: echo ${{ inputs.text }}
      - run: echo ${{ github.event.input.text }}
      - run: echo ${{ github.actor }}
-     - run: echo 'Hello ${{env.firstname}}'
-     - run: echo 'Website - ${{env.website}}'
-     - run: echo ${{job.status}}
-     - run: echo ${{runner.os}}
+     - run: echo 'Hello ${{ env.firstname }}'
+     - run: echo 'Website - ${{ env.website }}'
+     - run: echo ${{ job.status }}
+     - run: echo ${{ runner.os }}
