@@ -1,4 +1,4 @@
-name: Multiple Jobs with timeout Example 
+name: Schedule run with Multiple Jobs Example 
 on: 
   schedule:
     - cron: '30 12 * * 1,3'
