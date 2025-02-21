@@ -8,7 +8,7 @@ on:
        required: true
        type: string
   schedule:
-   - cron: '*/3 * * * *' # every 5 min
+   - cron: '*/3 * * * *' # every 3 min
   
 env:
   firstname: 'bhavesh'
@@ -25,42 +25,42 @@ jobs:
     - name: Every time
       run: echo "This step will always run"
   context-demo:
-    timeout-minutes: 5
-    continue-on-error: false
-    runs-on: ${{matrix.os}}
-    strategy:
-      matrix:
-        os: [windows-latest]
-    steps:
-     #- run: echo ${{ inputs.text }}
-     - run: echo ${{ github.event.inputs.text }}
-     - run: echo ${{ github.actor }}
-     - run: echo 'Hello ${{ env.firstname }}'
-     - run: echo 'Website - ${{ env.website }}'
-     - run: echo ${{ job.status }}
-     - run: echo ${{ runner.os }}
-     - run: echo 'Secret ${{ secrets.password }}'
-     - run: echo 'Variable ${{vars.ALLURE_RESULTS_PATH}}'
+   timeout-minutes: 5
+   continue-on-error: false
+   runs-on: ${{matrix.os}}
+   strategy:
+     matrix:
+       os: [windows-latest]
+   steps:
+    - run: echo ${{ inputs.text }}
+    - run: echo ${{ github.event.inputs.text }}
+    - run: echo ${{ github.actor }}
+    - run: echo 'Hello ${{ env.firstname }}'
+    - run: echo 'Website - ${{ env.website }}'
+    - run: echo ${{ job.status }}
+    - run: echo ${{ runner.os }}
+    - run: echo 'Secret ${{ secrets.password }}'
+    - run: echo 'Variable ${{vars.ALLURE_RESULTS_PATH}}'
   job2:
-    needs: [context-demo]
-    runs-on: ubuntu-latest
-    steps:
-     - run: echo 'runs after context-demo'
+   needs: [context-demo]
+   runs-on: ubuntu-latest
+   steps:
+    - run: echo 'runs after context-demo'
   job3:
-    runs-on: windows-latest
-    needs: [context-demo]
-    if: ${{success()}}
-    steps:
-      - run: echo 'job 3 runs on first job success'
+   runs-on: windows-latest
+   needs: [context-demo]
+   if: ${{success()}}
+   steps:
+     - run: echo 'job 3 runs on first job success'
   job4:
-    runs-on: ubuntu-latest
-    needs: [context-demo]
-    if: ${{ failure()}}
-    steps:
-     - run: echo 'job 4 runs on first job failure'
+   runs-on: ubuntu-latest
+   needs: [context-demo]
+   if: ${{ failure()}}
+   steps:
+    - run: echo 'job 4 runs on first job failure'
   job5:
-    runs-on: windows-latest
-    needs: [job4]
-    if: ${{always()}}
-    steps:
-      - run: echo 'job 5 will run though job4 fail or pass'
+   runs-on: windows-latest
+   needs: [job4]
+   if: ${{always()}}
+   steps:
+     - run: echo 'job 5 will run though job4 fail or pass'
