@@ -1,0 +1,51 @@
+name: Context Example 
+on: 
+  workflow_dispatch:
+   inputs:
+     text:
+       description: 'enter your text'
+       default: 'Hello'
+       required: true
+       type: string
+env:
+  firstname: 'bhavesh'
+  website: 'Test Website'
+
+# Can have multiple jobs, but this example is just one build job.
+jobs:
+  context-demo:
+    timeout-minutes: 5
+    continue-on-error: true
+    container: 
+      image: selenium-standlone-chrome:latest
+    runs-on: ${{matrix.os}}
+    strategy:
+      matrix:
+        os: [windows-latest]
+    steps:
+     - run: echo ${{ inputs.text }}
+     - run: echo ${{ github.event.inputs.text }}
+     - run: echo ${{ github.actor }}
+     - run: echo 'Hello ${{ env.firstname }}'
+     - run: echo 'Website - ${{ env.website }}'
+     - run: echo ${{ job.status }}
+     - run: echo ${{ runner.os }}
+     - run: echo 'Secret ${{ secrets.password }}'
+     - run: echo 'Variable ${{vars.ALLURE_RESULTS_PATH}}'
+  context-demo2:
+    needs: [context-demo]
+    runs-on: ubuntu-latest
+    steps:
+     - run: echo 'runs after context-demo'
+  job3:
+    runs-on: ubuntu-latest
+    needs: [context-demo]
+    if: ${{always()}}
+    steps:
+      - run: echo 'job 3 runs on first job success'
+  job4:
+    runs-on: ubuntu-latest
+    needs: [context-demo]
+    if: ${{ failure()}}
+    steps:
+     - run: echo 'job 4'
