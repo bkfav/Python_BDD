@@ -16,12 +16,10 @@ jobs:
   context-demo:
     timeout-minutes: 5
     continue-on-error: false
-    container: # Not supported in Windows
-      image: selenium-standlone-chrome:latest
     runs-on: ${{matrix.os}}
     strategy:
       matrix:
-        os: [ubuntu-latest]
+        os: [windows-latest]
     steps:
      - run: echo ${{ inputs.text }}
      - run: echo ${{ github.event.inputs.text }}
