@@ -15,8 +15,8 @@ env:
 jobs:
   context-demo:
     timeout-minutes: 5
-    continue-on-error: true
-    container: 
+    continue-on-error: false
+    container: # Not supported in Windows
       image: selenium-standlone-chrome:latest
     runs-on: ${{matrix.os}}
     strategy:
@@ -38,7 +38,7 @@ jobs:
     steps:
      - run: echo 'runs after context-demo'
   job3:
-    runs-on: ubuntu-latest
+    runs-on: windows-latest
     needs: [context-demo]
     if: ${{always()}}
     steps:
