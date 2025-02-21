@@ -1,8 +1,9 @@
 name: Schedule run with Multiple Jobs Example 
 on: 
   schedule:
-    - cron: '05 09 * * 1,3'
-    - cron: '05 09 * * 2,6'
+   - cron: '0 */1 * * *' # every hour
+   # - cron: '05 09 * * 1,3'
+   # - cron: '05 09 * * 2,6'
   workflow_dispatch: 
    inputs:
      text:
