@@ -21,7 +21,7 @@ jobs:
     runs-on: ${{matrix.os}}
     strategy:
       matrix:
-        os: [windows-latest]
+        os: [ubuntu-latest]
     steps:
      - run: echo ${{ inputs.text }}
      - run: echo ${{ github.event.inputs.text }}
@@ -32,7 +32,7 @@ jobs:
      - run: echo ${{ runner.os }}
      - run: echo 'Secret ${{ secrets.password }}'
      - run: echo 'Variable ${{vars.ALLURE_RESULTS_PATH}}'
-  context-demo2:
+  job2:
     needs: [context-demo]
     runs-on: ubuntu-latest
     steps:
