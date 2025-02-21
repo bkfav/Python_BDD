@@ -1,4 +1,4 @@
-name: Schedule run with Multiple Jobs Example 
+name: Schedule Nightly Pipeline run with Multiple Jobs Example 
 on:  
   workflow_dispatch: 
    inputs:
@@ -8,7 +8,7 @@ on:
        required: true
        type: string
   schedule:
-   - cron: '*/3 * * * *' # every 3 min
+   - cron: '0 0 * * *' 
   
 env:
   firstname: 'bhavesh'
