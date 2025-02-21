@@ -1,4 +1,4 @@
-name: Context Example 
+name: Multiple Jobs with timeout Example 
 on: 
   workflow_dispatch:
    inputs:
