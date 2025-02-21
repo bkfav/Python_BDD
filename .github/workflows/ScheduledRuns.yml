@@ -1,7 +1,7 @@
 name: Schedule run with Multiple Jobs Example 
 on: 
   schedule:
-   - cron: '0/5 * * * *' # every 5 min 
+   - cron: '*/5 0 * * *' # every 5 min 
    - cron: '0 */1 * * *' # every hour
    # - cron: '05 09 * * 1,3'
    # - cron: '05 09 * * 2,6'
@@ -22,7 +22,7 @@ jobs:
    runs-on: ubuntu-latest
    steps:
     - name: Not on Monday or Wednesday
-      if: github.event.schedule != '0/5 * * * *'
+      # if: github.event.schedule != '0/5 * * * *'
       run: echo "This step will be skipped on every 5 min schedule"
     - name: Every time
       run: echo "This step will always run"
