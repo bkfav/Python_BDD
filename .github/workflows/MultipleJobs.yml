@@ -42,10 +42,16 @@ jobs:
     needs: [context-demo]
     if: ${{always()}}
     steps:
-      - run: echo 'job 3 runs on first job success'
+      - run: echo 'job 3 runs on first job success/fail'
   job4:
     runs-on: ubuntu-latest
     needs: [context-demo]
     if: ${{ failure()}}
     steps:
      - run: echo 'job 4'
+  job5:
+    runs-on: windows-latest
+    needs: [context-demo]
+    if: ${{success()}}
+    steps:
+      - run: echo 'job 5 runs on first job success'
