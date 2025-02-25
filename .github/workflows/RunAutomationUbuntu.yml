@@ -6,7 +6,7 @@ on:
       os:
         description: 'Type of OS (ubuntu-latest, macos-latest, windows-latest)'
         required: true
-        default: 'ubuntu-latest'
+        default: 'windows-latest'
 jobs:
   test: 
     runs-on: ${{ github.event.inputs.os }}    
