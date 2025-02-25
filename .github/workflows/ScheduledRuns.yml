@@ -32,8 +32,6 @@ jobs:
      matrix:
        os: [windows-latest]
    steps:
-    - run: echo ${{ inputs.text }}
-    - run: echo ${{ github.event.inputs.text }}
     - run: echo ${{ github.actor }}
     - run: echo 'Hello ${{ env.firstname }}'
     - run: echo 'Website - ${{ env.website }}'
