@@ -21,6 +21,6 @@ jobs:
       - name: install and run behave 
         uses: cryptic-wizard/run-behave-tests@v0.4.0
         with:
-          test-path: example_project
+          test-path: Logs
           test-output-name: ${{ github.event.inputs.os }}.txt
 
