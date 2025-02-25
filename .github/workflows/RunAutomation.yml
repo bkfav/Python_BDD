@@ -5,7 +5,7 @@ on:
 # Can have multiple jobs, but this example is just one build job.
 jobs:
   run-batch:
-    runs-on: windows-latest
+    runs-on: ubuntu-latest
     steps:
       - name: Checkout Repository
         uses: actions/checkout@v3
